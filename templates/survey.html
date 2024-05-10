@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Farmer Survey</h1>
+<form action='/survey/' method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age"><br><br>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location"><br><br>
+    <label for="crop">What crop do you grow?</label>
+    <input type="text" id="crop" name="crop"><br><br>
+    <input type="submit" value="Submit">
+</form>
+{% for y in yself %}
+    <ul>
+        <li>{{ y.name }}-{{ y.age }}-{{ y.location }}-{{ y.crop }}</li>
+    </ul>
+{% endfor %}    
+{% endblock %}

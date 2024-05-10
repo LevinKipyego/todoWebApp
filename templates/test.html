@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ mytitle }}</title>
+{% endblock %}
+
+{% block body %}
+{% for instance in instances %}
+    <div class="products">
+        {{ instance.name }}
+    </div>
+{% endfor %}
+
+{% endblock %}
